@@ -1,5 +1,20 @@
 #!/usr/bin/env python
 
+# Copyright 2014 Kevin Murray
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 from __future__ import print_function
 import hashlib
 import os
@@ -10,13 +25,15 @@ from ._version import get_versions
 __version__ = get_versions()['version']
 del get_versions
 
+
 def human_size(num, exp=1024.0):
     exp = float(exp)
-    for x in ['B','KB','MB','GB', 'TB', 'PB', 'EB']:
+    for x in ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB']:
         if num < exp:
             return "{:3.1f}{}".format(num, x)
         num /= exp
     return "{:3.1f}{}".format(num, 'YB')
+
 
 class Doobie(object):
     """Doobie: Hash in a pipe
@@ -39,7 +56,8 @@ class Doobie(object):
         while len(buf) > 0:
             bytes_proc += 1024
             hasher_inst.update(buf)
-            sys.stdout.write(buf) # emit buffer again on stderr
+            # emit buffer again on stderr
+            sys.stdout.write(buf)
             sys.stdout.flush()
             if self.verbosity > 0:
                 if bytes_proc % (1024 * 1024) == 0:
@@ -52,23 +70,30 @@ class Doobie(object):
         input_fh.close()
         output_fh.close()
 
+
 class DoobieMD5(Doobie):
     hasher = hashlib.md5
+
 
 class DoobieSHA1(Doobie):
     hasher = hashlib.sha1
 
+
 class DoobieSHA224(Doobie):
     hasher = hashlib.sha224
+
 
 class DoobieSHA256(Doobie):
     hasher = hashlib.sha256
 
+
 class DoobieSHA384(Doobie):
     hasher = hashlib.sha384
 
+
 class DoobieSHA512(Doobie):
     hasher = hashlib.sha512
+
 
 HASH_CLASS_MAP = {
     "md5": DoobieMD5,
@@ -78,6 +103,7 @@ HASH_CLASS_MAP = {
     "sha384": DoobieSHA384,
     "sha512": DoobieSHA512,
 }
+
 
 if __name__ == "__main__":
     import argparse
