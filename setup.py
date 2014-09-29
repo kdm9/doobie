@@ -23,7 +23,7 @@ test_requires = [
 
 setup(
     name="doobie",
-    py_modules=['doobie', ],
+    py_modules=['doobie', 'versioneer', '_version', ],
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     install_requires=[],
