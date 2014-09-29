@@ -11,7 +11,7 @@ versioneer.parentdir_prefix = 'doobie-'
 desc = """
 doobie: Hash in a pipe!
 """
-with open(os.path.join(os.path.dirname(__file__), "README.md")) as rmfh:
+with open(os.path.join(os.path.dirname(__file__), "README")) as rmfh:
     readme = rmfh.read()
 
 test_requires = [
