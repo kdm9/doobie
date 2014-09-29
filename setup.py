@@ -11,6 +11,8 @@ versioneer.parentdir_prefix = 'doobie-'
 desc = """
 doobie: Hash in a pipe!
 """
+with open(os.path.join(os.path.dirname(__file__), "README.md")) as rmfh:
+    readme = rmfh.read()
 
 test_requires = [
     "coverage==3.7.1",
@@ -26,7 +28,9 @@ setup(
     cmdclass=versioneer.get_cmdclass(),
     install_requires=[],
     tests_require=test_requires,
+    license="GNU GPL v3",
     description=desc,
+    long_description=readme,
     author="Kevin Murray",
     author_email="spam@kdmurray.id.au",
     url="https://github.com/kdmurray91/doobie",
