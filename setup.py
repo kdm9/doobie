@@ -1,5 +1,6 @@
 from setuptools import setup
 import versioneer
+import os
 
 versioneer.VCS = 'git'
 versioneer.versionfile_source = '_version.py'
@@ -10,6 +11,10 @@ versioneer.parentdir_prefix = 'doobie-'
 desc = """
 doobie: Hash in a pipe!
 """
+
+if os.path.exists('README.md'):
+    with open('README.md') as rm_fh:
+        desc = rm_fh.read()
 
 test_requires = [
     "coverage==3.7.1",
