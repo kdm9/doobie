@@ -14,7 +14,7 @@ test_requires = [
 setup(
     name="doobie",
     py_modules=['doobie', ],
-    version="0.0.1",
+    version="0.0.2",
     install_requires=[],
     tests_require=test_requires,
     description=desc,

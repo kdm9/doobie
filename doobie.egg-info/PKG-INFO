@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: doobie
+Version: 0.0.1
+Summary: 
+doobie: Hash in a pipe!
+
+Home-page: https://github.com/kdmurray91/doobie
+Author: Kevin Murray
+Author-email: spam@kdmurray.id.au
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: hash,pipeline,md5,sha512,sha256
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
