@@ -3,8 +3,8 @@ import versioneer
 import os
 
 versioneer.VCS = 'git'
-versioneer.versionfile_source = '_version.py'
-versioneer.versionfile_build = '_version.py'
+versioneer.versionfile_source = 'doobie/_version.py'
+versioneer.versionfile_build = 'doobie/_version.py'
 versioneer.tag_prefix = ''
 versioneer.parentdir_prefix = 'doobie-'
 
@@ -23,7 +23,7 @@ test_requires = [
 
 setup(
     name="doobie",
-    py_modules=['doobie', 'versioneer', '_version', ],
+    packages=['doobie', ],
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     install_requires=[],
