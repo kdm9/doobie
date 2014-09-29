@@ -1,4 +1,11 @@
 from setuptools import setup
+import versioneer
+
+versioneer.VCS = 'git'
+versioneer.versionfile_source = '_version.py'
+versioneer.versionfile_build = '_version.py'
+versioneer.tag_prefix = ''
+versioneer.parentdir_prefix = 'doobie-'
 
 desc = """
 doobie: Hash in a pipe!
@@ -14,7 +21,8 @@ test_requires = [
 setup(
     name="doobie",
     py_modules=['doobie', ],
-    version="0.0.2",
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     install_requires=[],
     tests_require=test_requires,
     description=desc,

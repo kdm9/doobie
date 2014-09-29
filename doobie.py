@@ -5,6 +5,10 @@ import hashlib
 import os
 import sys
 
+# versioneer version import
+from ._version import get_versions
+__version__ = get_versions()['version']
+del get_versions
 
 def human_size(num, exp=1024.0):
     exp = float(exp)
