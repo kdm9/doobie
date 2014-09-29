@@ -89,9 +89,9 @@ if __name__ == "__main__":
     args = parse.parse_args()
     if args.hash not in HASH_CLASS_MAP:
         print("ERROR: bad hash name", args.hash, file=sys.stderr)
-        print("Supported hashes are:", args.hash, file=sys.stderr)
+        print("Supported hashes are:", file=sys.stderr)
         for hash in HASH_CLASS_MAP.keys():
-            print("\t{}".format(hash), file=sys.stderr)
+            print(" - {}".format(hash), file=sys.stderr)
         exit(1)
     # default I/O files
     ifh = sys.stdin
