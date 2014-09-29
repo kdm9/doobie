@@ -1,6 +1,0 @@
-doobie.py
-setup.py
-doobie.egg-info/PKG-INFO
-doobie.egg-info/SOURCES.txt
-doobie.egg-info/dependency_links.txt
-doobie.egg-info/top_level.txt
