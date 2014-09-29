@@ -3,3 +3,4 @@
 doobie-*/
 dist/
 *.egg-info/
+MANIFEST
